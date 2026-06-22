@@ -124,7 +124,19 @@ function mostrarResultado(datos) {
     const origen = datos.origin?.address || datos.origin?.query || "Origen";
     const destino = datos.destination?.address || datos.destination?.query || "Destino";
     porId("descripcionRuta").textContent = `${origen} → ${destino}`;
+    // Resetear estado del toggle de desglose
+    const desglose = porId("desglosMetricas");
+    const descRuta = porId("descripcionRuta");
+    const botonRes = porId("botonVerResultado");
+    if (desglose) desglose.classList.add("hidden");
+    if (descRuta) descRuta.classList.add("hidden");
+    if (botonRes) { botonRes.textContent = "Ver desglose del viaje ▾"; botonRes.classList.remove("abierto"); }
     mostrarZonasRojas(datos.red_zones || []);
+    // Resetear estado del toggle de peajes
+    const listaPeajesEl = porId("listaPeajes");
+    const botonPeajesEl = porId("botonVerPeajes");
+    if (listaPeajesEl) listaPeajesEl.classList.add("hidden");
+    if (botonPeajesEl) { botonPeajesEl.textContent = "Ver peajes ▾"; botonPeajesEl.classList.remove("abierto"); }
     mostrarPeajes(datos);
 }
 
@@ -148,6 +160,39 @@ function mostrarZonasRojas(zonas) {
         elemento.textContent = `${zona.name}${lugar ? ` — ${lugar}` : ""}`;
         lista.appendChild(elemento);
     });
+}
+
+function toggleResultados() {
+    const grilla = porId("desglosMetricas");
+    const desc = porId("descripcionRuta");
+    const boton = porId("botonVerResultado");
+    const visible = !grilla.classList.contains("hidden");
+    if (visible) {
+        grilla.classList.add("hidden");
+        desc.classList.add("hidden");
+        boton.textContent = "Ver desglose del viaje ▾";
+        boton.classList.remove("abierto");
+    } else {
+        grilla.classList.remove("hidden");
+        desc.classList.remove("hidden");
+        boton.textContent = "Ocultar desglose ▴";
+        boton.classList.add("abierto");
+    }
+}
+
+function togglePeajes() {
+    const lista = porId("listaPeajes");
+    const boton = porId("botonVerPeajes");
+    const visible = !lista.classList.contains("hidden");
+    if (visible) {
+        lista.classList.add("hidden");
+        boton.textContent = "Ver peajes ▾";
+        boton.classList.remove("abierto");
+    } else {
+        lista.classList.remove("hidden");
+        boton.textContent = "Ocultar ▴";
+        boton.classList.add("abierto");
+    }
 }
 
 function mostrarPeajes(datos) {

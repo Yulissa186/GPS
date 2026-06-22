@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPS - Rutas seguras</title>
+    <title>Mapa GPS - Mapa con rutas seguras</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
 </head>
 <body>
@@ -14,28 +14,38 @@
     <aside id="panelControl" class="panel">
         <header class="panel-header">
             <div>
-                <p class="eyebrow">PROYECTO GPS</p>
-                <h1>Rutas seguras</h1>
+                <p class="eyebrow">MAPA GPS</p>
+                <h1>Mapa con rutas seguras</h1>
             </div>
             <button id="botonCerrarPanel" class="icon-button" type="button" aria-label="Ocultar panel">✕</button>
         </header>
 
         <section class="form-section">
-            <label for="entradaOrigen">Origen</label>
-            <div class="input-row">
-                <span class="point point-a">A</span>
-                <input id="entradaOrigen" type="text" autocomplete="off" placeholder="Escribe o selecciona en el mapa">
-                <button id="botonLimpiarOrigen" class="clear-button" type="button" aria-label="Limpiar origen">×</button>
-            </div>
-
-            <label for="entradaDestino">Destino</label>
-            <div class="input-row">
-                <span class="point point-b">B</span>
-                <input id="entradaDestino" type="text" autocomplete="off" placeholder="Escribe o selecciona en el mapa">
-                <button id="botonLimpiarDestino" class="clear-button" type="button" aria-label="Limpiar destino">×</button>
-            </div>
-
             <div class="two-columns">
+                <div>
+                    <label for="entradaOrigen">Origen</label>
+                    <div class="input-row">
+                        <span class="point point-a">A</span>
+                        <input id="entradaOrigen" type="text" autocomplete="off" placeholder="Origen...">
+                        <button id="botonLimpiarOrigen" class="clear-button" type="button" aria-label="Limpiar origen">×</button>
+                    </div>
+                </div>
+                <div>
+                    <label for="entradaDestino">Destino</label>
+                    <div class="input-row">
+                        <span class="point point-b">B</span>
+                        <input id="entradaDestino" type="text" autocomplete="off" placeholder="Destino...">
+                        <button id="botonLimpiarDestino" class="clear-button" type="button" aria-label="Limpiar destino">×</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button id="botonCalcular" class="primary-button" type="button">Calcular ruta</button>
+                <button id="botonLimpiarTodo" class="secondary-button" type="button">Limpiar</button>
+            </div>
+
+            <div class="two-columns vehicle-row">
                 <div>
                     <label for="selectorVehiculo">Vehículo</label>
                     <select id="selectorVehiculo">
@@ -48,17 +58,11 @@
                     <input id="entradaRendimiento" type="number" min="1" max="100" step="0.1" value="{{ rendimiento_predeterminado }}">
                 </div>
             </div>
-
-            <div class="button-row">
-                <button id="botonCalcular" class="primary-button" type="button">Calcular ruta</button>
-                <button id="botonLimpiarTodo" class="secondary-button" type="button">Limpiar</button>
-            </div>
-            <p class="map-help">También puedes hacer clic en el mapa para elegir primero el origen y después el destino.</p>
         </section>
 
         <section class="zones-toolbar">
             <button id="botonAlternarZonas" class="danger-light-button" type="button">Mostrar zonas rojas</button>
-            <button id="botonAgregarZona" class="secondary-button" type="button">Agregar zona</button>
+            <button id="botonAgregarZona" class="secondary-button" type="button">+ Agregar zona</button>
         </section>
 
         <div id="cajaMensaje" class="message hidden" role="status"></div>
@@ -69,7 +73,11 @@
                 <span id="insigniaAdvertenciaZona" class="warning-badge hidden">Zona roja</span>
             </div>
 
-            <div class="metric-grid">
+            <button id="botonVerResultado" class="ver-resultado-button" type="button" onclick="toggleResultados()">
+                Ver desglose del viaje ▾
+            </button>
+
+            <div id="desglosMetricas" class="metric-grid hidden">
                 <article class="metric"><span>Distancia</span><strong id="valorDistancia">0 km</strong></article>
                 <article class="metric"><span>Duración</span><strong id="valorDuracion">0 min</strong></article>
                 <article class="metric"><span>Combustible</span><strong id="valorLitros">0 L</strong></article>
@@ -78,7 +86,7 @@
                 <article class="metric total"><span>Total</span><strong id="valorCostoTotal">$0</strong></article>
             </div>
 
-            <p id="descripcionRuta" class="route-description"></p>
+            <p id="descripcionRuta" class="route-description hidden"></p>
 
             <div id="resultadoZonasRojas" class="result-block hidden">
                 <h3>Zonas rojas detectadas</h3>
@@ -86,8 +94,11 @@
             </div>
 
             <div id="resultadoPeajes" class="result-block">
-                <h3>Casetas y peajes</h3>
-                <div id="listaPeajes" class="tolls-list"></div>
+                <div class="tolls-header">
+                    <h3>Casetas y peajes</h3>
+                    <button id="botonVerPeajes" class="toggle-tolls-button" type="button" onclick="togglePeajes()">Ver peajes ▾</button>
+                </div>
+                <div id="listaPeajes" class="tolls-list hidden"></div>
             </div>
         </section>
     </aside>

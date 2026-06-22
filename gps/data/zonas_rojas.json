@@ -611,5 +611,239 @@
     "lat": 19.7940639,
     "lng": -99.8791596,
     "radius_m": 1000.0
+  },
+  {
+    "id": "cdmx-iztapalapa-central",
+    "name": "Centro de Iztapalapa",
+    "municipality": "Iztapalapa",
+    "state": "Ciudad de México",
+    "risks": [
+      "Robo con violencia",
+      "Extorsión",
+      "Narcomenudeo"
+    ],
+    "description": "Zona con alta incidencia de robo a transeúnte y extorsión a comercios.",
+    "lat": 19.359,
+    "lng": -99.06,
+    "radius_m": 1400
+  },
+  {
+    "id": "cdmx-tepito",
+    "name": "Tepito y Mercado Negro",
+    "municipality": "Cuauhtémoc",
+    "state": "Ciudad de México",
+    "risks": [
+      "Robo de vehículo",
+      "Narcomenudeo",
+      "Extorsión",
+      "Secuestro exprés"
+    ],
+    "description": "Zona con presencia de organizaciones delictivas y comercio de mercancía robada.",
+    "lat": 19.442,
+    "lng": -99.127,
+    "radius_m": 900
+  },
+  {
+    "id": "jalisco-guadalajara-tlaquepaque",
+    "name": "San Martín Texmelucan - Tlaquepaque",
+    "municipality": "San Pedro Tlaquepaque",
+    "state": "Jalisco",
+    "risks": [
+      "Homicidio doloso",
+      "Robo con violencia",
+      "Control territorial"
+    ],
+    "description": "Disputas territoriales entre grupos del crimen organizado.",
+    "lat": 20.6386,
+    "lng": -103.3109,
+    "radius_m": 1200
+  },
+  {
+    "id": "jalisco-zapopan-norte",
+    "name": "Zapopan Norte",
+    "municipality": "Zapopan",
+    "state": "Jalisco",
+    "risks": [
+      "Extorsión",
+      "Narcomenudeo",
+      "Robo con violencia"
+    ],
+    "description": "Zona periférica con presencia de CJNG y actividad de narcomenudeo.",
+    "lat": 20.738,
+    "lng": -103.408,
+    "radius_m": 1500
+  },
+  {
+    "id": "veracruz-boca-del-rio",
+    "name": "Boca del Río - Puerto",
+    "municipality": "Boca del Río",
+    "state": "Veracruz",
+    "risks": [
+      "Robo con violencia",
+      "Extorsión",
+      "Homicidio doloso"
+    ],
+    "description": "Zona portuaria con conflictos por control de rutas de trasiego.",
+    "lat": 19.102,
+    "lng": -96.117,
+    "radius_m": 1300
+  },
+  {
+    "id": "veracruz-xalapa-norte",
+    "name": "Xalapa Norte",
+    "municipality": "Xalapa",
+    "state": "Veracruz",
+    "risks": [
+      "Robo con violencia",
+      "Secuestro exprés",
+      "Extorsión"
+    ],
+    "description": "Colonias periféricas con alta incidencia delictiva y presencia del crimen.",
+    "lat": 19.56,
+    "lng": -96.925,
+    "radius_m": 1100
+  },
+  {
+    "id": "tamaulipas-nuevo-laredo",
+    "name": "Nuevo Laredo Centro",
+    "municipality": "Nuevo Laredo",
+    "state": "Tamaulipas",
+    "risks": [
+      "Control territorial",
+      "Extorsión",
+      "Homicidio doloso",
+      "Secuestro"
+    ],
+    "description": "Ciudad fronteriza con fuerte presencia de cártel del Noreste (CDN).",
+    "lat": 27.476,
+    "lng": -99.515,
+    "radius_m": 2000
+  },
+  {
+    "id": "tamaulipas-reynosa-centro",
+    "name": "Reynosa Centro y Colonias",
+    "municipality": "Reynosa",
+    "state": "Tamaulipas",
+    "risks": [
+      "Robo con violencia",
+      "Extorsión",
+      "Secuestro",
+      "Balaceras"
+    ],
+    "description": "Zona con frecuentes enfrentamientos entre cárteles y fuerzas del orden.",
+    "lat": 26.092,
+    "lng": -98.2773,
+    "radius_m": 1800
+  },
+  {
+    "id": "michoacan-uruapan-centro",
+    "name": "Uruapan Centro",
+    "municipality": "Uruapan",
+    "state": "Michoacán",
+    "risks": [
+      "Homicidio doloso",
+      "Extorsión",
+      "Control territorial",
+      "Robo con violencia"
+    ],
+    "description": "Ciudad con disputa territorial intensa entre CJNG y Cárteles Unidos.",
+    "lat": 19.4195,
+    "lng": -102.0614,
+    "radius_m": 1600
+  },
+  {
+    "id": "michoacan-apatzingan",
+    "name": "Apatzingán Tierra Caliente",
+    "municipality": "Apatzingán",
+    "state": "Michoacán",
+    "risks": [
+      "Control territorial",
+      "Homicidio doloso",
+      "Secuestro",
+      "Extorsión"
+    ],
+    "description": "Zona de Tierra Caliente históricamente controlada por el crimen organizado.",
+    "lat": 19.0889,
+    "lng": -102.3537,
+    "radius_m": 2000
+  },
+  {
+    "id": "cdmx-ecatepec-norte",
+    "name": "Ecatepec Norte - Ojo de Agua",
+    "municipality": "Ecatepec de Morelos",
+    "state": "Estado de México",
+    "risks": [
+      "Robo con violencia",
+      "Feminicidio",
+      "Narcomenudeo",
+      "Secuestro exprés"
+    ],
+    "description": "Zona con alta incidencia de robo violento y feminicidios.",
+    "lat": 19.668,
+    "lng": -99.04,
+    "radius_m": 1500
+  },
+  {
+    "id": "chihuahua-ciudad-juarez-centro",
+    "name": "Ciudad Juárez Centro",
+    "municipality": "Juárez",
+    "state": "Chihuahua",
+    "risks": [
+      "Homicidio doloso",
+      "Feminicidio",
+      "Narcomenudeo",
+      "Robo con violencia"
+    ],
+    "description": "Zona fronteriza con alta tasa de homicidios y disputas por corredores de tráfico.",
+    "lat": 31.6904,
+    "lng": -106.4245,
+    "radius_m": 2000
+  },
+  {
+    "id": "colima-colima-centro",
+    "name": "Colima Capital - Villahermosa",
+    "municipality": "Colima",
+    "state": "Colima",
+    "risks": [
+      "Homicidio doloso",
+      "Control territorial",
+      "Extorsión"
+    ],
+    "description": "Colima es uno de los estados con mayor tasa de homicidios per cápita del país.",
+    "lat": 19.2452,
+    "lng": -103.7241,
+    "radius_m": 1400
+  },
+  {
+    "id": "zacatecas-fresnillo",
+    "name": "Fresnillo",
+    "municipality": "Fresnillo",
+    "state": "Zacatecas",
+    "risks": [
+      "Homicidio doloso",
+      "Extorsión",
+      "Secuestro",
+      "Control territorial"
+    ],
+    "description": "Uno de los municipios con mayor índice de violencia en Zacatecas.",
+    "lat": 23.1741,
+    "lng": -102.8658,
+    "radius_m": 1600
+  },
+  {
+    "id": "guanajuato-irapuato-centro",
+    "name": "Irapuato Centro",
+    "municipality": "Irapuato",
+    "state": "Guanajuato",
+    "risks": [
+      "Homicidio doloso",
+      "Robo con violencia",
+      "Extorsión",
+      "Narcomenudeo"
+    ],
+    "description": "Ciudad con disputas entre CJNG y Santa Rosa de Lima, alta tasa de homicidios.",
+    "lat": 20.674,
+    "lng": -101.3554,
+    "radius_m": 1500
   }
 ]
